@@ -1,6 +1,7 @@
 #include <SFML/Graphics.hpp>
 #include "Gui.hpp"
 #include "Button.h"
+#include "Picture.h"
 #include <iostream>
 
 void changeButtonColor(std::shared_ptr<Button> button, sf::Color color)
@@ -9,19 +10,15 @@ void changeButtonColor(std::shared_ptr<Button> button, sf::Color color)
     std::cout << "Button color changed\n";
 }
 
-void printToConsole(const sf::String& message)
+void printToConsole(const std::string& message)
 {
-    std::cout << message.toAnsiString() << std::endl;
-}
-void onButtonReleased()
-{
-    std::cout << "Button released\n";
+    std::cout << message << std::endl;
 }
 
 int main()
 {
 
-    sf::RenderWindow window{ {800, 600}, "MY GUI" };
+    sf::RenderWindow window{ {900, 800}, "MY GUI" };
     Gui gui{window};
 
 
@@ -29,13 +26,13 @@ int main()
     button->setBackgroundColor(sf::Color::White);
     button->setTextColor(sf::Color::Red);
     button->setSize(sf::Vector2f{150, 80});
-    button->setPosition(sf::Vector2f{120, 120});
+    button->setPosition(sf::Vector2f{10, 10});
 
     sf::Font font;
-    font.loadFromFile("font.ttf");   
+    font.loadFromFile("resources/OpenSans-Bold.ttf");   
 
     button->setFont(font); 
-    button->setText("but");
+    button->setText("button1");
 
     button->onHover(&changeButtonColor, button, sf::Color::Green);
     button->onStopHover(&changeButtonColor, button, sf::Color::White);
@@ -45,6 +42,13 @@ int main()
     button->setFontSize(24);
 
     gui.addWidget(button);
+
+
+    auto pic = Picture::createPicture("resources/imgs/img2.jpg");
+    pic->setPosition({300, 100});
+    pic->setID("picture");
+    gui.addWidget(pic);
+
 
     gui.mainloop();
 }

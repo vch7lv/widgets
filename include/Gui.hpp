@@ -8,7 +8,7 @@ class Gui
         Gui(sf::RenderWindow& window);
 
         void mainloop();
-        void removeWidget(const sf::String& ID);
+        void removeWidget(const std::string& ID);
 
         template <typename widgetDerived>
         void addWidget(widgetDerived widget);

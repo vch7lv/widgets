@@ -1,11 +1,11 @@
 #include "Widget.h"
 
 
-sf::String Widget::getID() const {
+std::string Widget::getID() const {
     return ID;
 }
 
-sf::String Widget::setID(const sf::String& newID) {
+void Widget::setID(const std::string& newID) {
     ID = newID;
 }
 

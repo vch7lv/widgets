@@ -15,8 +15,8 @@ class Widget : public sf::Drawable, public std::enable_shared_from_this<Widget>
 
         bool isOn(sf::Vector2f point) const;
 
-        sf::String getID() const;
-        sf::String setID(const sf::String& newID);
+        std::string getID() const;
+        void setID(const std::string& newID);
 
         Widget(const Widget&) = delete;
         Widget& operator = (const Widget&) = delete;
@@ -24,5 +24,5 @@ class Widget : public sf::Drawable, public std::enable_shared_from_this<Widget>
     protected:
         sf::Vector2f position;
         sf::Vector2f size;
-        sf::String ID;
+        std::string ID;
 };

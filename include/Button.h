@@ -10,7 +10,7 @@ class Button final : public Clickable
         void setSize(sf::Vector2f size);
         void setPosition(sf::Vector2f pos);
         void setFont(sf::Font font);
-        void setText(const sf::String& text);
+        void setText(const std::string& text);
         void setFontSize(unsigned int sz);
 
         static std::shared_ptr<Button> createButton();

@@ -1,5 +1,4 @@
 #include "Button.h"
-#include <iostream>
 
 void Button::setBackgroundColor(sf::Color color) 
 {
@@ -24,7 +23,7 @@ void Button::setFont(sf::Font newfont)
     font = newfont;
     text.setFont(font);
 }
-void Button::setText(const sf::String& newText)
+void Button::setText(const std::string& newText)
 {
     text.setString(newText);
     updatePositionAndSize();

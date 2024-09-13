@@ -1,6 +1,6 @@
 #pragma once
 #include "Gui.hpp"
-#include <iostream>
+
 
 Gui::Gui(sf::RenderWindow& window) : window(window) {}
 
@@ -20,7 +20,7 @@ void Gui::mainloop() {
     }
 }
 
-void Gui::removeWidget(const sf::String& ID) {
+void Gui::removeWidget(const std::string& ID) {
     for (auto it = widgets.begin(); it != widgets.end(); ++it)
     {
         auto widget = *it;
