@@ -1,10 +1,16 @@
 cmake_minimum_required(VERSION 3.1)
 project("widgets_project")
 
-#set(SFML_STATIC_LIBRARIES TRUE)
-set(SFML_DIR "/home/projects/snake/SFML")
+set(SFML_STATIC_LIBRARIES TRUE)
 
-find_package(SFML 2 COMPONENTS audio graphics window system REQUIRED)
+include(FetchContent)
+FetchContent_Declare(SFML
+    GIT_REPOSITORY https://github.com/SFML/SFML.git
+    GIT_TAG 2.5.1
+    GIT_SHALLOW ON
+    EXCLUDE_FROM_ALL
+    SYSTEM)
+FetchContent_MakeAvailable(SFML)
 
 set(SOURCES
     src/main.cpp
@@ -26,4 +32,4 @@ add_custom_target(copy_resources ALL
 add_dependencies(widgets copy_resources)
 
 target_include_directories(widgets PUBLIC include)
-target_link_libraries(widgets sfml-graphics sfml-audio)
+target_link_libraries(widgets sfml-graphics sfml-window sfml-system sfml-audio)

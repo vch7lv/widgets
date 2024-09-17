@@ -18,7 +18,7 @@ void printToConsole(const std::string& message)
 int main()
 {
 
-    sf::RenderWindow window{ {900, 800}, "MY GUI" };
+    sf::RenderWindow window{ sf::VideoMode({900, 800}), "MY GUI" };
     Gui gui{window};
 
 
