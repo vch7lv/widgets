@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.1)
+cmake_minimum_required(VERSION 3.22)
 project("widgets_project")
 
 set(SFML_STATIC_LIBRARIES TRUE)
@@ -7,9 +7,7 @@ include(FetchContent)
 FetchContent_Declare(SFML
     GIT_REPOSITORY https://github.com/SFML/SFML.git
     GIT_TAG 2.5.1
-    GIT_SHALLOW ON
-    EXCLUDE_FROM_ALL
-    SYSTEM)
+)
 FetchContent_MakeAvailable(SFML)
 
 set(SOURCES
