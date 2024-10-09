@@ -11,7 +11,6 @@ FetchContent_Declare(SFML
 FetchContent_MakeAvailable(SFML)
 
 set(SOURCES
-    src/main.cpp
     src/Gui.cpp
     src/Widget.cpp
     src/Button.cpp
