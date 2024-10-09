@@ -18,7 +18,7 @@ set(SOURCES
     src/Picture.cpp
 )
 
-add_executable(widgets ${SOURCES})
+add_library(widgets ${SOURCES})
 
 add_custom_target(copy_resources ALL
     COMMAND ${CMAKE_COMMAND} -E copy_directory
